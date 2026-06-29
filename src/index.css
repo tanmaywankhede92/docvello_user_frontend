@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+    --font-heading: "satoshi", sans-serif;
+    --font-body: "Poppins", sans-serif;
+}
+
