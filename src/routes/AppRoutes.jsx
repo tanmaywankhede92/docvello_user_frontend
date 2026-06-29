@@ -35,7 +35,7 @@ const AppRoutes = () => {
           </ProtectedDoctorRoute>
         }
       />
-      
+
       <Route path="/" element={<Home />} />
       <Route path="/doctors" element={<DoctorsPage />} />
       <Route path="/login" element={<LoginPage />} />
