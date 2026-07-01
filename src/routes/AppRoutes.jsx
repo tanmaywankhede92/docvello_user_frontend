@@ -18,24 +18,27 @@ import Peditatrics from "../components/pages/SpecializationsPage/Peditatrics";
 import ProfilePage from "../components/pages/LoginPage/ProfilePage";
 import DoctorAuthPage from "../components/Doctor/auth/DoctorAuthPage";
 import DoctorDashboard from "../components/Doctor/Dashboard/DoctorDashboard";
+import ProfileDetails from "../components/Doctor/Dashboard/ProfileDetails";
 import DoctorLayout from "../components/layouts/DoctorLayout";
+import BasicDetails from "../components/layouts/BasicDetails";
 
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/doctor/auth" element={<DoctorAuthPage />} />
-
+      <Route path="/doctor/dashboard/details" element={<BasicDetails />} />
+      <Route path="/doctor/dashboard/profile" element={<ProfileDetails />} />
       <Route
         path="/doctor/dashboard"
         element={
           <ProtectedDoctorRoute>
             <DoctorLayout>
-            <DoctorDashboard />
+              <DoctorDashboard />
+              <ProfileDetails />
             </DoctorLayout>
           </ProtectedDoctorRoute>
         }
       />
-
       <Route path="/" element={<Home />} />
       <Route path="/doctors" element={<DoctorsPage />} />
       <Route path="/login" element={<LoginPage />} />
@@ -49,8 +52,8 @@ const AppRoutes = () => {
       <Route path="/contact" element={<ContactPage />} />
       <Route path="*" element={<h1>404 Not Found</h1>} />
       <Route path="/profile" element={<ProfilePage />} />
+      <Route path="/basic-details" element={<BasicDetails />} />
     </Routes>
   );
 };
-
 export default AppRoutes;

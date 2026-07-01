@@ -88,7 +88,8 @@ export default function MissionVision() {
           {/* BUTTON */}
          <button
   onClick={() => navigate("/contact")}
-  className="mt-6 bg-white text-[#2FA38F] px-10 py-3 rounded-full font-medium font-body hover:bg-gray-100 transition"
+  className="mt-6 bg-white text-[#2FA38F] px-10 py-3 rounded-full font-medium font-body
+   hover:bg-gray-100 transition"
 >
   Contact Us
 </button>

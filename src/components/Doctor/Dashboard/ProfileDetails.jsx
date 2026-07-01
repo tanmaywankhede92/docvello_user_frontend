@@ -7,11 +7,10 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { useState } from "react";
-import dash1 from "../../assets/Dashboard/dash1.png";
 
-export default function Dashboard() {
+export default function ProfileDetails() {
   return (
- <div className="min-h-screen p-3">
+    <div className="min-h-screen p-3">
       <div className="bg-white rounded-[28px] overflow-hidden flex h-[95vh] shadow-2xl">
 
         {/* Sidebar */}
@@ -74,16 +73,11 @@ export default function Dashboard() {
             </div>
           </header>
         </div>
-
       </div>
     </div>
-
-
-
-
-
-
-
-
   );
 }
+
+
+
+
