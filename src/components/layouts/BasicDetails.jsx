@@ -25,7 +25,6 @@ export default function BasicDetails() {
             <CalendarDays size={20} />
             Appointment
           </button>
-
           <button className="w-full rounded-xl py-4 px-5 flex items-center gap-3 hover:bg-white/10">
             <Users size={20} />
             Patients
@@ -165,9 +164,8 @@ export default function BasicDetails() {
             {/* Buttons */}
             <div className="flex gap-4">
               <button className="flex-1 border border-emerald-600 text-emerald-600 py-3 rounded-lg font-medium">
-                Back
+               Back
               </button>
-
               <button className="flex-1 bg-emerald-600 text-white py-3 rounded-lg font-medium hover:bg-emerald-700">
                 Next
               </button>
