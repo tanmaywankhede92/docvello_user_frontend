@@ -27,7 +27,7 @@ const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/doctor/auth" element={<DoctorAuthPage />} />
-      
+
       <Route
   path="/doctor/dashboard/details"
   element={
