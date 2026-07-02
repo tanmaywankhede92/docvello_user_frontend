@@ -18,23 +18,32 @@ import Peditatrics from "../components/pages/SpecializationsPage/Peditatrics";
 import ProfilePage from "../components/pages/LoginPage/ProfilePage";
 import DoctorAuthPage from "../components/Doctor/auth/DoctorAuthPage";
 import DoctorDashboard from "../components/Doctor/Dashboard/DoctorDashboard";
-import ProfileDetails from "../components/Doctor/Dashboard/ProfileDetails";
-import DoctorLayout from "../components/layouts/DoctorLayout";
+
+import DoctorLayout from "../components/layouts/Registration";
 import BasicDetails from "../components/layouts/BasicDetails";
+
 
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/doctor/auth" element={<DoctorAuthPage />} />
-      <Route path="/doctor/dashboard/details" element={<BasicDetails />} />
-      <Route path="/doctor/dashboard/profile" element={<ProfileDetails />} />
+      
+      <Route
+  path="/doctor/dashboard/details"
+  element={
+    <ProtectedDoctorRoute>
+      <DoctorLayout>
+        <BasicDetails />
+      </DoctorLayout>
+    </ProtectedDoctorRoute>
+  }
+/>
       <Route
         path="/doctor/registration"
         element={
           <ProtectedDoctorRoute>
             <DoctorLayout>
-              <DoctorDashboard />
-              <ProfileDetails />
+              <DoctorDashboard />       
             </DoctorLayout>
           </ProtectedDoctorRoute>
         }

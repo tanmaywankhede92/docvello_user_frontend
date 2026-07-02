@@ -81,7 +81,7 @@ export default function DoctorAuthPage() {
     };
 
     setDoctorSession(doctorUser);
-    navigate("/doctor/dashboard");
+    navigate("/doctor/registration");
   };
 
   return (
