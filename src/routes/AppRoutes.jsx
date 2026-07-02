@@ -29,7 +29,7 @@ const AppRoutes = () => {
       <Route path="/doctor/dashboard/details" element={<BasicDetails />} />
       <Route path="/doctor/dashboard/profile" element={<ProfileDetails />} />
       <Route
-        path="/doctor/dashboard"
+        path="/doctor/registration"
         element={
           <ProtectedDoctorRoute>
             <DoctorLayout>
