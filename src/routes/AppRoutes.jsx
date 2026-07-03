@@ -18,36 +18,106 @@ import Peditatrics from "../components/pages/SpecializationsPage/Peditatrics";
 import ProfilePage from "../components/pages/LoginPage/ProfilePage";
 import DoctorAuthPage from "../components/Doctor/auth/DoctorAuthPage";
 import DoctorDashboard from "../components/Doctor/Dashboard/DoctorDashboard";
-
 import DoctorLayout from "../components/layouts/Registration";
 import BasicDetails from "../components/layouts/BasicDetails";
+import MedicalDetails from "../components/layouts/MedicalDetails";
+import EducationQualification from "../components/layouts/EducationQualification";
+import ConnectPractice from "../components/layouts/ConnectPractice";
+import EstablishmentProof from "../components/layouts/EstablishmentProof";
+import Registrationtwo from "../components/layouts/Registrationtwo";
+import IdentityProof from "../components/layouts/IdentityProof";
+import MedicalProof from "../components/layouts/MedicalProof";
 
 
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/doctor/auth" element={<DoctorAuthPage />} />
-
-      <Route
-  path="/doctor/dashboard/details"
-  element={
-    <ProtectedDoctorRoute>
-      <DoctorLayout>
-        <BasicDetails />
-      </DoctorLayout>
-    </ProtectedDoctorRoute>
-  }
-/>
-      <Route
+            <Route
         path="/doctor/registration"
         element={
           <ProtectedDoctorRoute>
             <DoctorLayout>
-              <DoctorDashboard />       
+              <DoctorDashboard />      
             </DoctorLayout>
           </ProtectedDoctorRoute>
         }
       />
+
+<Route
+  path="/doctor/dashboard/details"
+  element={
+    <ProtectedDoctorRoute>
+      <BasicDetails />
+    </ProtectedDoctorRoute>
+  }
+/>
+
+<Route
+  path="/doctor/dashboard/medical"
+  element={
+    <ProtectedDoctorRoute>
+      <MedicalDetails />
+    </ProtectedDoctorRoute>
+  }
+/>
+
+<Route
+  path="/doctor/dashboard/education"
+  element={
+    <ProtectedDoctorRoute>
+      <EducationQualification />
+    </ProtectedDoctorRoute>
+  }
+/>
+
+<Route
+  path="/doctor/dashboard/practice"
+  element={
+    <ProtectedDoctorRoute>
+      <ConnectPractice />
+    </ProtectedDoctorRoute>
+  }
+/>
+
+<Route
+  path="/doctor/dashboard/proof"
+  element={
+    <ProtectedDoctorRoute>
+      <EstablishmentProof />
+    </ProtectedDoctorRoute>
+  }
+/>
+
+<Route
+  path="/doctor/dashboard/registrationtwo"
+  element={
+    <ProtectedDoctorRoute>
+      <Registrationtwo />
+    </ProtectedDoctorRoute>
+  }
+/>
+
+<Route
+  path="/doctor/dashboard/identity"
+  element={
+    <ProtectedDoctorRoute>
+      <IdentityProof />
+    </ProtectedDoctorRoute>
+  }
+/>
+
+<Route
+  path="/doctor/dashboard/medicalproof"
+  element={
+    <ProtectedDoctorRoute>
+      <MedicalProof />
+    </ProtectedDoctorRoute>
+  }
+/>
+
+
+
       <Route path="/" element={<Home />} />
       <Route path="/doctors" element={<DoctorsPage />} />
       <Route path="/login" element={<LoginPage />} />
