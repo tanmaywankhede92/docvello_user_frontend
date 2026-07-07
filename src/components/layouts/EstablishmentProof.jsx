@@ -21,42 +21,82 @@ export default function EducationQualification() {
             </h1>
 
             <nav className="space-y-5">
-              <button className="bg-white text-[#009879] w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium">
-                <User size={18} />
-                Profile
-              </button>
+  {/* Profile */}
+  <button
+    onClick={() => navigate("/doctor/registration")}
+    className={`w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium transition ${
+      location.pathname === "/doctor/registration"
+        ? "bg-white text-[#009879]"
+        : "text-white hover:bg-white/10"
+    }`}
+  >
+    <User size={18} />
+    Profile
+  </button>
 
-              <button className="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-lg w-full">
-                <CalendarDays size={18} />
-                Appointment
-              </button>
+  {/* Appointment */}
+  <button
+    onClick={() => navigate("/doctor/dashboard/appointments")}
+    className={`w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium transition ${
+      location.pathname === "/doctor/dashboard/appointments"
+        ? "bg-white text-[#009879]"
+        : "text-white hover:bg-white/10"
+    }`}
+  >
+    <Calendar size={18} />
+    Appointment
+  </button>
 
-              <button className="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-lg w-full">
-                <Users size={18} />
-                Patients
-              </button>
-            </nav>
+  {/* Patients */}
+  <button
+    onClick={() => navigate("/doctor/dashboard/patients")}
+    className={`w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium transition ${
+      location.pathname === "/doctor/dashboard/patients"
+        ? "bg-white text-[#009879]"
+        : "text-white hover:bg-white/10"
+    }`}
+  >
+    <Users size={18} />
+    Patients
+  </button>
+</nav>
           </div>
 
-          <div className="space-y-4">
-            <button className="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-lg w-full">
-              <Settings size={18} />
-              Settings
-            </button>
+         <div className="space-y-4">
+  {/* Settings */}
+  <button
+    onClick={() => navigate("/doctor/dashboard/settings")}
+    className={`w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium transition ${
+      location.pathname === "/doctor/dashboard/settings"
+        ? "bg-white text-[#009879]"
+        : "text-white hover:bg-white/10"
+    }`}
+  >
+    <Settings size={18} />
+    Settings
+  </button>
 
-            <button className="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-lg w-full">
-              <LogOut size={18} />
-              Log out
-            </button>
-          </div>
+  {/* Logout */}
+  <button
+    onClick={() => navigate("/doctor/logout")}
+    className={`w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium transition ${
+      location.pathname === "/doctor/logout"
+        ? "bg-white text-[#009879]"
+        : "text-white hover:bg-white/10"
+    }`}
+  >
+    <LogOut size={18} />
+    Log out
+  </button>
+</div>
         </aside>
 
    
         {/* Main */}
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col overflow-hidden">
 
           {/* Header */}
-          <header className="h-[86px] border-b border-[#ECECEC] flex justify-end items-center px-10 bg-white">
+          <header className="h-[86px] border-b border-[#DBDBDB]  flex justify-end  items-center px-10 bg-white">
             <div className="flex items-center gap-4">
               <img
                 src="https://i.pravatar.cc/100?img=32"
@@ -74,7 +114,7 @@ export default function EducationQualification() {
           </header>
 
 {/* Content */}
-<div className="flex-1 bg-[#FAFAFA] flex flex-col items-center justify-center py-6">
+<div className="flex-1 overflow-y-auto bg-[#FAFAFA] px-8 py-6 flex flex-col items-center">
 
   {/* Step */}
   <p className="text-[18px] text-[#9B9B9B] font-medium">
@@ -91,7 +131,7 @@ export default function EducationQualification() {
   </div>
 
   {/* Card */}
-  <div className="w-[510px] bg-white border border-[#D8D8D8] rounded-[30px] px-10 py-8">
+  <div className="w-[510px] bg-white border border-[#D8D8D8] rounded-[30px] px-10 py-4 mb-4">
 
     <h1 className="text-[34px] font-bold text-center mb-8">
       Establishment Details
@@ -99,7 +139,7 @@ export default function EducationQualification() {
 
     {/* Establishment Name */}
     <div className="mb-5">
-      <label className="block text-[#8B8B8B] text-[17px] mb-2">
+      <label className="block text-[#8B8B8B] text-[17px] mb-4">
         Establishment Name
       </label>
 

@@ -27,12 +27,17 @@ import EstablishmentProof from "../components/layouts/EstablishmentProof";
 import Registrationtwo from "../components/layouts/Registrationtwo";
 import IdentityProof from "../components/layouts/IdentityProof";
 import MedicalProof from "../components/layouts/MedicalProof";
+import EstablishmentProoff from "../components/layouts/EstablishmentProoff";
+import Registrationthree from "../components/layouts/Registrationthree";
+import MapLocation from "../components/layouts/MapLocation";
+import Appointments from "../components/Doctor/Dashboard/Appointments";
 
 
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/doctor/auth" element={<DoctorAuthPage />} />
+
             <Route
         path="/doctor/registration"
         element={
@@ -116,6 +121,40 @@ const AppRoutes = () => {
   }
 />
 
+<Route
+  path="/doctor/dashboard/establishmentprooff"
+  element={
+    <ProtectedDoctorRoute>
+      <EstablishmentProoff />
+    </ProtectedDoctorRoute>
+  }
+/>
+<Route
+  path="/doctor/dashboard/registrationthree"
+  element={
+    <ProtectedDoctorRoute>
+      <Registrationthree />
+    </ProtectedDoctorRoute>
+  }
+/>
+
+<Route
+  path="/doctor/dashboard/maplocation"
+  element={
+    <ProtectedDoctorRoute>
+      <MapLocation />
+    </ProtectedDoctorRoute>
+  }
+/>
+
+<Route
+  path="/doctor/dashboard/appointments"
+  element={
+    <ProtectedDoctorRoute>
+      <Appointments />
+    </ProtectedDoctorRoute>
+  }
+/>
 
 
       <Route path="/" element={<Home />} />

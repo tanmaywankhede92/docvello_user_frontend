@@ -22,34 +22,74 @@ export default function BasicDetails() {
             </h1>
 
             <nav className="space-y-5">
-              <button className="bg-white text-[#009879] w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium">
-                <User size={18} />
-                Profile
-              </button>
+  {/* Profile */}
+  <button
+    onClick={() => navigate("/doctor/registration")}
+    className={`w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium transition ${
+      location.pathname === "/doctor/registration"
+        ? "bg-white text-[#009879]"
+        : "text-white hover:bg-white/10"
+    }`}
+  >
+    <User size={18} />
+    Profile
+  </button>
 
-              <button className="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-lg w-full">
-                <CalendarDays size={18} />
-                Appointment
-              </button>
+  {/* Appointment */}
+  <button
+    onClick={() => navigate("/doctor/dashboard/appointments")}
+    className={`w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium transition ${
+      location.pathname === "/doctor/dashboard/appointments"
+        ? "bg-white text-[#009879]"
+        : "text-white hover:bg-white/10"
+    }`}
+  >
+    <Calendar size={18} />
+    Appointment
+  </button>
 
-              <button className="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-lg w-full">
-                <Users size={18} />
-                Patients
-              </button>
-            </nav>
+  {/* Patients */}
+  <button
+    onClick={() => navigate("/doctor/dashboard/patients")}
+    className={`w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium transition ${
+      location.pathname === "/doctor/dashboard/patients"
+        ? "bg-white text-[#009879]"
+        : "text-white hover:bg-white/10"
+    }`}
+  >
+    <Users size={18} />
+    Patients
+  </button>
+</nav>
           </div>
 
           <div className="space-y-4">
-            <button className="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-lg w-full">
-              <Settings size={18} />
-              Settings
-            </button>
+  {/* Settings */}
+  <button
+    onClick={() => navigate("/doctor/dashboard/settings")}
+    className={`w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium transition ${
+      location.pathname === "/doctor/dashboard/settings"
+        ? "bg-white text-[#009879]"
+        : "text-white hover:bg-white/10"
+    }`}
+  >
+    <Settings size={18} />
+    Settings
+  </button>
 
-            <button className="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-lg w-full">
-              <LogOut size={18} />
-              Log out
-            </button>
-          </div>
+  {/* Logout */}
+  <button
+    onClick={() => navigate("/doctor/logout")}
+    className={`w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium transition ${
+      location.pathname === "/doctor/logout"
+        ? "bg-white text-[#009879]"
+        : "text-white hover:bg-white/10"
+    }`}
+  >
+    <LogOut size={18} />
+    Log out
+  </button>
+</div>
         </aside>
 
    
@@ -57,7 +97,7 @@ export default function BasicDetails() {
         <div className="flex-1 flex flex-col">
 
           {/* Header */}
-          <header className="h-[86px] border-b border-[#ECECEC] flex justify-end items-center px-10 bg-white">
+          <header className="h-[86px] border-b border-[#DBDBDB]  flex justify-end  items-center px-10 bg-white">
             <div className="flex items-center gap-4">
               <img
                 src="https://i.pravatar.cc/100?img=32"
@@ -90,9 +130,9 @@ export default function BasicDetails() {
   </div>
 
   {/* Card */}
-  <div className="w-[540px] bg-white border border-[#D8D8D8] rounded-[30px] px-10 py-8">
+  <div className="w-[540px] bg-white border border-[#D8D8D8] rounded-[30px] px-10 py-4 mb-4">
 
-    <h1 className="text-[46px] font-bold text-center mb-8">
+    <h1 className="text-[34px] font-bold text-center mb-4">
       Identity Proof
     </h1>
 
@@ -128,17 +168,17 @@ export default function BasicDetails() {
     </div>
 
     {/* Description */}
-    <p className="text-[#8C8C8C] text-[17px] leading-7 mt-6">
+    <p className="text-[#8C8C8C] text-[17px] leading-6 mt-6">
       Please upload your identity proof to ensure that the
       ownership of your profile remains with only you.
     </p>
 
     {/* Documents */}
-    <h3 className="font-semibold text-[18px] mt-6 mb-4">
+    <h3 className="font-semibold text-[18px] mt-6 mb-2 ">
       Acceptable documents
     </h3>
 
-    <div className="grid grid-cols-2 gap-y-4 text-[17px]">
+    <div className="grid grid-cols-2 text-[17px]">
 
       <div className="flex items-center gap-2">
         <span className="text-green-500 text-xl">✔</span>
@@ -163,10 +203,10 @@ export default function BasicDetails() {
     </div>
 
     {/* Buttons */}
-    <div className="flex gap-4 mt-8">
+    <div className="flex gap-4 mt-4">
 
       <button
-        onClick={() => navigate("/doctor/dashboard/identity")}
+        onClick={() => navigate("/doctor/dashboard/registrationtwo")}
         className="flex-1 h-[48px] border border-[#009879] rounded-lg text-[#009879] font-medium"
       >
         Back

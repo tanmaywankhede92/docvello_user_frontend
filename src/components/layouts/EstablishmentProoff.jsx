@@ -11,10 +11,12 @@ import {
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function MedicalProof() {
-   const [file, setFile] = useState(null);
-   const [error, setError] = useState("");
-   const navigate = useNavigate();
+export default function EstablishmentProoff() {
+ const [file, setFile] = useState(null);
+  const [error, setError] = useState("");
+  const [ownerType, setOwnerType] = useState("owner");
+
+const navigate = useNavigate();
   return (
     <div className="h-screen flex bg-gray-100 font-sans">
       {/* Sidebar */}
@@ -25,7 +27,7 @@ export default function MedicalProof() {
               🩺 <span>DocVello</span>
             </h1>
 
-                      <nav className="space-y-5">
+            <nav className="space-y-5">
   {/* Profile */}
   <button
     onClick={() => navigate("/doctor/registration")}
@@ -98,7 +100,7 @@ export default function MedicalProof() {
 
    
         {/* Main */}
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col overflow-hidden">
 
           {/* Header */}
           <header className="h-[86px] border-b border-[#DBDBDB]  flex justify-end  items-center px-10 bg-white">
@@ -118,23 +120,23 @@ export default function MedicalProof() {
             </div>
           </header>
 
-          {/* Content */}
-<div className="flex-1 bg-[#FAFAFA] overflow-y-auto px-8 py-8 flex flex-col items-center">
+{/* Content */}
+<div className="flex-1 overflow-y-auto bg-[#FAFAFA] px-8 py-6 flex flex-col items-center">
 
   {/* Step */}
   <p className="text-[18px] text-[#8B8B8B] font-medium">
-    Step - 2/3
-  </p>
+  Step - 3/3
+</p>
 
   {/* Progress */}
   <div className="flex gap-4 mt-3 mb-6">
-    <div className="w-[150px] h-[6px] rounded-full bg-[#009879]" />
-    <div className="w-[150px] h-[6px] rounded-full bg-[#009879]" />
-    <div className="w-[150px] h-[6px] rounded-full bg-[#D9D9D9]" />
-  </div>
+  <div className="w-[150px] h-[6px] rounded-full bg-[#009879]" />
+  <div className="w-[150px] h-[6px] rounded-full bg-[#009879]" />
+  <div className="w-[150px] h-[6px] rounded-full bg-[#009879]" />
+</div>
 
   {/* Card */}
-  <div className="w-[500px] bg-white border border-[#D9D9D9] rounded-[28px] px-8 py-8">
+  <div className="w-[560px] bg-white border border-[#D9D9D9] rounded-[28px] px-9 py-8">
 
     {/* Success Box */}
     <div className="bg-[#EAF8F3] rounded-xl px-5 flex gap-3 mb-2">
@@ -149,8 +151,8 @@ export default function MedicalProof() {
         </h3>
 
         <p className="text-[#009879] text-[16px] leading-7">
-          Your Medical Registration Certificate has been
-          successfully uploaded and is pending review.
+         Your Tax Receipt has been successfully uploaded and is
+pending review.
         </p>
       </div>
     </div>
@@ -176,8 +178,60 @@ export default function MedicalProof() {
 
     {/* Heading */}
     <h1 className="text-[34px] font-bold text-center mb-4">
-      Medical Registration Proof
+      Establishment Proof
     </h1>
+
+    <div className="mt-6 mb-8">
+  <p className="text-[22px] font-medium mb-4">
+    I am
+  </p>
+
+  <div className="space-y-4">
+
+    <label className="flex items-center gap-3 cursor-pointer">
+      <input
+        type="radio"
+        name="owner"
+        value="owner"
+        checked={ownerType === "owner"}
+        onChange={(e) => setOwnerType(e.target.value)}
+        className="w-5 h-5 accent-[#009879]"
+      />
+      <span className="text-[20px]">
+        the owner of establishment
+      </span>
+    </label>
+
+    <label className="flex items-center gap-3 cursor-pointer">
+      <input
+        type="radio"
+        name="owner"
+        value="rent"
+        checked={ownerType === "rent"}
+        onChange={(e) => setOwnerType(e.target.value)}
+        className="w-5 h-5 accent-[#009879]"
+      />
+      <span className="text-[20px]">
+        have rented at other establishment
+      </span>
+    </label>
+
+    <label className="flex items-center gap-3 cursor-pointer">
+      <input
+        type="radio"
+        name="owner"
+        value="other"
+        checked={ownerType === "other"}
+        onChange={(e) => setOwnerType(e.target.value)}
+        className="w-5 h-5 accent-[#009879]"
+      />
+      <span className="text-[20px]">
+        have rented at other establishment
+      </span>
+    </label>
+
+  </div>
+</div>
 
     {/* Upload Box */}
     <label className="border border-[#D7D7D7] rounded-xl h-[165px] flex flex-col justify-center items-center cursor-pointer">
@@ -215,9 +269,13 @@ export default function MedicalProof() {
     </p>
 
     {/* Acceptable */}
-    <h3 className="font-semibold text-[20px] mt-7 mb-4">
-      Acceptable documents
-    </h3>
+    <h3 className="font-semibold text-[20px] mt-7 mb-3">
+  Acceptable documents
+</h3>
+
+<p className="text-[18px] text-[#333]">
+  Clinic Registration Proof/ Waste Disposal Proof/ Tax receipt
+</p>
 
     <div className="space-y-3">
 
@@ -241,7 +299,7 @@ export default function MedicalProof() {
     <div className="flex gap-4 mt-8">
 
       <button
-        onClick={() => navigate("/doctor/dashboard/identity")}
+        onClick={() => navigate("/doctor/dashboard/medicalproof")}
         className="flex-1 h-[50px] rounded-lg border border-[#009879] text-[#009879] text-[18px] font-medium"
       >
         Back
@@ -250,11 +308,11 @@ export default function MedicalProof() {
       <button
   onClick={() => {
     if (!file) {
-      setError("Please upload your Medical Registration Certificate.");
-      return;
+      setError("Please upload your establishment proof.");
+     return;
     }
 
-    navigate("/doctor/dashboard/establishmentprooff");
+    navigate("/doctor/dashboard/registrationthree");
   }}
   className="flex-1 h-[50px] rounded-lg bg-[#009879] text-white text-[18px] font-medium hover:bg-[#00816B]"
 >

@@ -22,10 +22,12 @@ export default function MedicalDetails() {
             </h1>
 
             <nav className="space-y-5">
-              <button className="bg-white text-[#009879] w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium">
-                <User size={18} />
-                Profile
-              </button>
+             <button
+             onClick={() => navigate("/doctor/registration")}
+             className="bg-white text-[#009879] w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium">
+             <User size={18} />
+             Profile
+             </button>
 
               <button className="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-lg w-full">
                 <CalendarDays size={18} />
@@ -57,7 +59,7 @@ export default function MedicalDetails() {
         <div className="flex-1 flex flex-col">
 
           {/* Header */}
-          <header className="h-[86px] border-b border-[#ECECEC] flex justify-end items-center px-10 bg-white">
+          <header className="h-[86px] border-b border-[#DBDBDB]  flex justify-end  items-center px-10 bg-white">
             <div className="flex items-center gap-4">
               <img
                 src="https://i.pravatar.cc/100?img=32"
@@ -92,9 +94,9 @@ export default function MedicalDetails() {
   </div>
 
   {/* Card */}
-  <div className="w-[510px] bg-white border border-[#D8D8D8] rounded-[30px] px-10 py-12">
+  <div className="w-[510px] bg-white border border-[#D8D8D8] rounded-[30px] px-10 py-4 mb-4">
 
-    <h1 className="text-[34px] font-bold text-center mb-10">
+    <h1 className="text-[34px] font-bold text-center mb-4">
       Connect a Practice
     </h1>
 

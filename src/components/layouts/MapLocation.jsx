@@ -7,8 +7,9 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import mapImage from "../../assets/ContactPage/Location.png";
 
-export default function MedicalDetails() {
+export default function MapLocation(){
   const navigate = useNavigate();
   return (
     <div className="h-screen flex bg-gray-100 font-sans">
@@ -20,7 +21,7 @@ export default function MedicalDetails() {
               🩺 <span>DocVello</span>
             </h1>
 
-           <nav className="space-y-5">
+            <nav className="space-y-5">
   {/* Profile */}
   <button
     onClick={() => navigate("/doctor/registration")}
@@ -62,7 +63,7 @@ export default function MedicalDetails() {
 </nav>
           </div>
 
-         <div className="space-y-4">
+          <div className="space-y-4">
   {/* Settings */}
   <button
     onClick={() => navigate("/doctor/dashboard/settings")}
@@ -93,7 +94,7 @@ export default function MedicalDetails() {
 
    
         {/* Main */}
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col overflow-hidden">
 
           {/* Header */}
           <header className="h-[86px] border-b border-[#DBDBDB]  flex justify-end  items-center px-10 bg-white">
@@ -114,94 +115,93 @@ export default function MedicalDetails() {
           </header>
 
  {/* Content */}
-<div className="flex-1 bg-[#FAFAFA] flex flex-col items-center pt-4">
+<div className="flex-1 bg-[#FAFAFA] overflow-y-auto px-8 py-8 flex flex-col items-center">
 
   {/* Step */}
   <p className="text-[18px] text-[#9B9B9B] font-medium">
-    Step - 2/5
-  </p>
+  Step - 1/3
+</p>
 
   {/* Progress */}
-  <div className="flex gap-4 mt-3 mb-8">
-    <div className="w-[90px] h-[6px] rounded-full bg-[#009879]" />
-    <div className="w-[90px] h-[6px] rounded-full bg-[#009879]" />
-    <div className="w-[90px] h-[6px] rounded-full bg-[#D9D9D9]" />
-    <div className="w-[90px] h-[6px] rounded-full bg-[#D9D9D9]" />
-    <div className="w-[90px] h-[6px] rounded-full bg-[#D9D9D9]" />
-  </div>
+ <div className="flex gap-4 mt-3 mb-8">
+  <div className="w-[130px] h-[6px] rounded-full bg-[#009879]" />
+  <div className="w-[130px] h-[6px] rounded-full bg-[#D9D9D9]" />
+  <div className="w-[130px] h-[6px] rounded-full bg-[#D9D9D9]" />
+</div>
 
   {/* Card */}
-  <div className="w-[560px] bg-white border border-[#D8D8D8] rounded-[30px] px-10 py-4 mb-4">
+ <div className="w-[560px] bg-white border border-[#D8D8D8] rounded-[30px] px-10 py-6 mb-4">
 
-    <h1 className="text-[34px] font-bold text-center mb-4">
-      Medical Registration
-    </h1>
+  <h1 className="text-[34px] font-bold text-center mb-6">
+    Map Location
+  </h1>
 
-    {/* Registration Number */}
-    <div className="mb-7">
-      <label className="block text-[17px] text-[#8B8B8B] mb-2">
-        Registration Number
-      </label>
-
-      <input
-        type="text"
-        className="w-full h-[52px] border border-[#D7D7D7] rounded-lg px-4 outline-none"
-      />
-    </div>
-
-    {/* Registration Council */}
-    <div className="mb-7">
-      <label className="block text-[17px] text-[#8B8B8B] mb-2">
-        Registration Council
-      </label>
-
-      <div className="relative">
-        <select className="w-full h-[52px] border border-[#D7D7D7] rounded-lg px-4 appearance-none">
-          <option>Maharashtra Medical Council</option>
-        </select>
-
-        <ChevronDown
-          size={18}
-          className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"
-        />
-      </div>
-    </div>
-
-    {/* Registration Year */}
-    <div className="mb-10">
-      <label className="block text-[17px] text-[#8B8B8B] mb-2">
-        Registration Year
-      </label>
-
-      <div className="relative">
-        <select className="w-full h-[52px] border border-[#D7D7D7] rounded-lg px-4 appearance-none">
-          <option>2026</option>
-        </select>
-
-        <ChevronDown
-          size={18}
-          className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"
-        />
-      </div>
-    </div>
-
-    {/* Buttons */}
-    <div className="flex gap-4">
-        <button
-  onClick={() => navigate("/doctor/dashboard/details")}
-  className="flex-1 h-[40px] border border-[#009879] rounded-lg text-[#009879] text-[18px] font-medium"
->
-  Back
-</button>
-
-      <button
-        onClick={() => navigate("/doctor/dashboard/education")}
-        className="flex-1 h-[40px] rounded-lg bg-[#009879] text-white text-[18px] font-medium">
-        Next
-      </button>
-    </div>
-
+  {/* Map */}
+  <div className="mb-6">
+    <img
+      src={mapImage}
+      alt="Map"
+      className="w-full h-[180px] rounded-lg border object-cover"
+    />
   </div>
+
+  {/* Phone */}
+  <div className="mb-6">
+    <label className="block text-[17px] text-[#8B8B8B] mb-2">
+      Phone number
+    </label>
+
+    <input
+      type="text"
+      placeholder="+91-XXXX-XXXX"
+      className="w-full h-[52px] border border-[#D7D7D7] rounded-lg px-4 outline-none"
+    />
+  </div>
+
+  {/* Email */}
+  <div className="mb-6">
+    <label className="block text-[17px] text-[#8B8B8B] mb-2">
+      Email
+    </label>
+
+    <input
+      type="email"
+      placeholder="info@gmail.com"
+      className="w-full h-[52px] border border-[#D7D7D7] rounded-lg px-4 outline-none"
+    />
+  </div>
+
+  {/* Address */}
+  <div className="mb-8">
+    <label className="block text-[17px] text-[#8B8B8B] mb-2">
+      Street Address
+    </label>
+
+    <input
+      type="text"
+      placeholder="Nagpur"
+      className="w-full h-[52px] border border-[#D7D7D7] rounded-lg px-4 outline-none"
+    />
+  </div>
+
+  {/* Buttons */}
+  <div className="flex gap-4">
+    <button
+      onClick={() => navigate("/doctor/dashboard/registrationthree")}
+      className="flex-1 h-[50px] border border-[#009879] rounded-lg text-[#009879] text-[18px] font-medium"
+    >
+      Back
+    </button>
+
+    <button
+      onClick={() => navigate("/doctor/dashboard/education")}
+      className="flex-1 h-[50px] rounded-lg bg-[#009879] text-white text-[18px] font-medium"
+    >
+      Next
+    </button>
+  </div>
+
+</div>
 </div>
       </div>
     </div>

@@ -13,8 +13,7 @@ import dash1 from "../../assets/Dashboard/dash1.png";
 export default function Registrationtwo() {
     const navigate = useNavigate();
   return (
- <div className="min-h-screen bg-[#F4F4F4] p-2">
-      <div className="bg-white rounded-[30px] overflow-hidden flex h-[96vh] shadow-xl">
+<div className="h-screen flex bg-gray-100 font-sans">
 
         {/* Sidebar */}
         <aside className="w-[290px] bg-[#009879] text-white flex flex-col justify-between py-8 px-6">
@@ -24,42 +23,82 @@ export default function Registrationtwo() {
               🩺 <span>DocVello</span>
             </h1>
 
-            <nav className="space-y-5">
-              <button className="bg-white text-[#009879] w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium">
-                <User size={18} />
-                Profile
-              </button>
+                     <nav className="space-y-5">
+  {/* Profile */}
+  <button
+    onClick={() => navigate("/doctor/registration")}
+    className={`w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium transition ${
+      location.pathname === "/doctor/registration"
+        ? "bg-white text-[#009879]"
+        : "text-white hover:bg-white/10"
+    }`}
+  >
+    <User size={18} />
+    Profile
+  </button>
 
-              <button className="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-lg w-full">
-                <Calendar size={18} />
-                Appointment
-              </button>
+  {/* Appointment */}
+  <button
+    onClick={() => navigate("/doctor/dashboard/appointments")}
+    className={`w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium transition ${
+      location.pathname === "/doctor/dashboard/appointments"
+        ? "bg-white text-[#009879]"
+        : "text-white hover:bg-white/10"
+    }`}
+  >
+    <Calendar size={18} />
+    Appointment
+  </button>
 
-              <button className="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-lg w-full">
-                <Users size={18} />
-                Patients
-              </button>
-            </nav>
+  {/* Patients */}
+  <button
+    onClick={() => navigate("/doctor/dashboard/patients")}
+    className={`w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium transition ${
+      location.pathname === "/doctor/dashboard/patients"
+        ? "bg-white text-[#009879]"
+        : "text-white hover:bg-white/10"
+    }`}
+  >
+    <Users size={18} />
+    Patients
+  </button>
+</nav>
           </div>
 
-          <div className="space-y-4">
-            <button className="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-lg w-full">
-              <Settings size={18} />
-              Settings
-            </button>
+                    <div className="space-y-4">
+  {/* Settings */}
+  <button
+    onClick={() => navigate("/doctor/dashboard/settings")}
+    className={`w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium transition ${
+      location.pathname === "/doctor/dashboard/settings"
+        ? "bg-white text-[#009879]"
+        : "text-white hover:bg-white/10"
+    }`}
+  >
+    <Settings size={18} />
+    Settings
+  </button>
 
-            <button className="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-lg w-full">
-              <LogOut size={18} />
-              Log out
-            </button>
-          </div>
+  {/* Logout */}
+  <button
+    onClick={() => navigate("/doctor/logout")}
+    className={`w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium transition ${
+      location.pathname === "/doctor/logout"
+        ? "bg-white text-[#009879]"
+        : "text-white hover:bg-white/10"
+    }`}
+  >
+    <LogOut size={18} />
+    Log out
+  </button>
+</div>
         </aside>
 
         {/* Main */}
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col overflow-hidden">
 
           {/* Header */}
-          <header className="h-[86px] border-b border-[#ECECEC] flex justify-end items-center px-10 bg-white">
+          <header className="h-[86px] border-b border-[#DBDBDB]  flex justify-end  items-center px-10 bg-white">
             <div className="flex items-center gap-4">
               <img
                 src="https://i.pravatar.cc/100?img=32"
@@ -77,7 +116,8 @@ export default function Registrationtwo() {
           </header>
 
           {/* Body */}
-<div className="flex flex-1 px-[44px] pt-[34px] gap-10 bg-white">
+<div className="flex-1 overflow-y-auto bg-[#FAFAFA] px-[44px] py-[34px]">
+  <div className="flex gap-10 min-h-full">
 
 {/* Left */}
 <div className="w-[52%] pt-2">
@@ -164,6 +204,7 @@ export default function Registrationtwo() {
 
       </div>
       </div>
+    
 
   );
 }

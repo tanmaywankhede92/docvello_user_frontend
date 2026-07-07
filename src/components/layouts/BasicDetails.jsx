@@ -22,10 +22,12 @@ export default function BasicDetails() {
             </h1>
 
             <nav className="space-y-5">
-              <button className="bg-white text-[#009879] w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium">
-                <User size={18} />
-                Profile
-              </button>
+            <button
+             onClick={() => navigate("/doctor/registration")}
+             className="bg-white text-[#009879] w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium" >
+             <User size={18} />
+              Profile
+             </button>
 
               <button className="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-lg w-full">
                 <CalendarDays size={18} />
@@ -54,10 +56,10 @@ export default function BasicDetails() {
 
    
         {/* Main */}
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col overflow-hidden">
 
           {/* Header */}
-          <header className="h-[86px] border-b border-[#ECECEC] flex justify-end items-center px-10 bg-white">
+          <header className="h-[86px] border-b border-[#DBDBDB]  flex justify-end  items-center px-10 bg-white">
             <div className="flex items-center gap-4">
               <img
                 src="https://i.pravatar.cc/100?img=32"
@@ -75,7 +77,8 @@ export default function BasicDetails() {
           </header>
 
         {/* Content */}
-        <div className="flex-1 flex flex-col items-center bg-[#FAFAFA] pt-4">
+        {/* Content */}
+<div className="flex-1 overflow-y-auto bg-[#FAFAFA] px-8 py-6 flex flex-col items-center">
 
   {/* Step */}
   <p className="text-[18px] text-[#9A9A9A] font-medium mb-2">
@@ -144,6 +147,7 @@ export default function BasicDetails() {
         <label className="flex items-center gap-2 text-[18px]">
           <input
             type="radio"
+            name="practice"
             defaultChecked
             className="w-5 h-5 accent-[#009879]"
           />
@@ -153,7 +157,8 @@ export default function BasicDetails() {
         <label className="flex items-center gap-2 text-[18px]">
           <input
             type="radio"
-            className="w-5 h-5 accent-[#009879]"
+             name="practice"
+             className="w-5 h-5 accent-[#009879]"
           />
           Female
         </label>
