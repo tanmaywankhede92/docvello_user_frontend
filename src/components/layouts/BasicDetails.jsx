@@ -28,11 +28,17 @@ export default function BasicDetails() {
              <User size={18} />
               Profile
              </button>
-
-              <button className="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-lg w-full">
-                <CalendarDays size={18} />
-                Appointment
-              </button>
+ <button
+    onClick={() => navigate("/doctor/dashboard/appointments")}
+    className={`w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium transition ${
+      location.pathname === "/doctor/dashboard/appointments"
+        ? "bg-white text-[#009879]"
+        : "text-white hover:bg-white/10"
+    }`}
+  >
+    <CalendarDays size={18} />
+    Appointment
+  </button>
 
               <button className="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-lg w-full">
                 <Users size={18} />

@@ -6,10 +6,12 @@ import {
   LogOut,
   ChevronDown,
 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function MedicalDetails() {
   const navigate = useNavigate();
+   const location = useLocation();
   return (
     <div className="h-screen flex bg-gray-100 font-sans">
       {/* Sidebar */}
@@ -35,7 +37,7 @@ export default function MedicalDetails() {
   </button>
 
   {/* Appointment */}
-  <button
+ <button
     onClick={() => navigate("/doctor/dashboard/appointments")}
     className={`w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium transition ${
       location.pathname === "/doctor/dashboard/appointments"
@@ -43,7 +45,7 @@ export default function MedicalDetails() {
         : "text-white hover:bg-white/10"
     }`}
   >
-    <Calendar size={18} />
+    <CalendarDays size={18} />
     Appointment
   </button>
 

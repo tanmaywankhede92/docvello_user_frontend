@@ -46,7 +46,7 @@ export default function Registrationthreee(){
         : "text-white hover:bg-white/10"
     }`}
   >
-    <Calendar size={18} />
+    <CalendarDays size={18} />
     Appointment
   </button>
 

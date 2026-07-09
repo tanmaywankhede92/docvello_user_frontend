@@ -13,7 +13,7 @@ import { Eye, CircleX } from "lucide-react";
 import AddAppointmentModal from "./AddAppointmentModal";
 import FilterAppointment from "./FilterAppointment";
 
-export default function Appointments() {
+export default function Patients() {
     const navigate = useNavigate();
      const location = useLocation();
      const [isModalOpen, setIsModalOpen] = useState(false);
@@ -144,7 +144,7 @@ export default function Appointments() {
       <p className="text-gray-500 text-sm">Today's Appointment</p>
 
       <div className="flex items-center gap-3 mt-2">
-        <h2 className="text-5xl font-bold">150</h2>
+        <h2 className="text-5xl font-bold">200</h2>
       </div>
 
       <p className="text-gray-500 mt-4">
@@ -156,7 +156,7 @@ export default function Appointments() {
       <p className="text-gray-500 text-sm">Total Appointment</p>
 
       <div className="flex items-center gap-3 mt-2">
-        <h2 className="text-5xl font-bold">55</h2>
+        <h2 className="text-5xl font-bold">150</h2>
       </div>
 
       <p className="text-gray-500 mt-4">

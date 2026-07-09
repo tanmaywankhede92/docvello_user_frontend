@@ -31,6 +31,10 @@ import EstablishmentProoff from "../components/layouts/EstablishmentProoff";
 import Registrationthree from "../components/layouts/Registrationthree";
 import MapLocation from "../components/layouts/MapLocation";
 import Appointments from "../components/Doctor/Dashboard/Appointments";
+import Patients from "../components/Doctor/Dashboard/Patients";
+import AddAppointmentModal from "../components/Doctor/Dashboard/AddAppointmentModal";
+import FilterAppointment from "../components/Doctor/Dashboard/FilterAppointment";
+import  SettingsModel from "../components/Doctor/Dashboard/SettingsModel";
 
 
 const AppRoutes = () => {
@@ -155,6 +159,36 @@ const AppRoutes = () => {
     </ProtectedDoctorRoute>
   }
 />
+
+<Route
+  path="/doctor/dashboard/addappointment"
+  element={
+    <ProtectedDoctorRoute>
+      <AddAppointmentModal
+        isOpen={true}
+        onClose={() => {}}
+      />
+    </ProtectedDoctorRoute>
+  }
+/>
+<Route
+  path="/doctor/dashboard/patients"
+  element={
+    <ProtectedDoctorRoute>
+      <Patients />
+    </ProtectedDoctorRoute>
+  }
+/>
+
+<Route
+  path="/doctor/dashboard/settings"
+  element={
+    <ProtectedDoctorRoute>
+      <SettingsModel />
+    </ProtectedDoctorRoute>
+  }
+/>
+
 
 
       <Route path="/" element={<Home />} />

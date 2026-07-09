@@ -9,7 +9,7 @@ import {
   AlertTriangle,
 } from "lucide-react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function EstablishmentProoff() {
  const [file, setFile] = useState(null);
@@ -17,6 +17,7 @@ export default function EstablishmentProoff() {
   const [ownerType, setOwnerType] = useState("owner");
 
 const navigate = useNavigate();
+const location = useLocation();
   return (
     <div className="h-screen flex bg-gray-100 font-sans">
       {/* Sidebar */}
@@ -50,7 +51,7 @@ const navigate = useNavigate();
         : "text-white hover:bg-white/10"
     }`}
   >
-    <Calendar size={18} />
+    <CalendarDays size={18} />
     Appointment
   </button>
 

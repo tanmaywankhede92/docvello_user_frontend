@@ -38,7 +38,7 @@ export default function Registrationtwo() {
   </button>
 
   {/* Appointment */}
-  <button
+ <button
     onClick={() => navigate("/doctor/dashboard/appointments")}
     className={`w-full rounded-lg px-4 py-3 flex items-center gap-3 font-medium transition ${
       location.pathname === "/doctor/dashboard/appointments"
@@ -46,7 +46,7 @@ export default function Registrationtwo() {
         : "text-white hover:bg-white/10"
     }`}
   >
-    <Calendar size={18} />
+    <CalendarDays size={18} />
     Appointment
   </button>
 
