@@ -20,10 +20,10 @@ export default function Appointments() {
      const [isFilterOpen, setIsFilterOpen] = useState(false);
      
   return (
-<div className="h-screen flex bg-[#F5F5F5] overflow-hidden">
+<div className="min-h-screen flex flex-col lg:flex-row bg-[#F5F5F5] overflow-hidden">
 
         {/* Sidebar */}
-        <aside className="w-[290px] bg-[#009879] text-white flex flex-col justify-between py-8 px-6">
+        <aside className="hidden lg:flex w-[290px] bg-[#009879] text-white flex-col justify-between px-6 py-8">
           <div>
             {/* Logo */}
             <h1 className="text-3xl font-bold mb-14 flex items-center gap-2">
@@ -105,17 +105,17 @@ export default function Appointments() {
         <div className="flex-1 flex flex-col overflow-hidden">
 
           {/* Header */}
-          <header className="h-[86px] border-b border-[#DBDBDB]  flex justify-end  items-center px-10 bg-white">
+          <header className="h-[70px] lg:h-[86px] border-b border-[#DBDBDB] flex justify-end items-center px-4 sm:px-6 lg:px-10 bg-white">
             <div className="flex items-center gap-4">
               <img
                 src="https://i.pravatar.cc/100?img=32"
                 alt=""
-                className="w-12 h-12 rounded-full"
+                className="w-10 h-10 lg:w-12 lg:h-12 rounded-full"
               />
 
               <div>
-                <h3 className="font-semibold">Christina Hanks</h3>
-                <p className="text-gray-500 text-sm">
+                <h3 className="font-semibold text-sm lg:text-base">Christina Hanks</h3>
+                <p className="text-gray-500 text-xs lg:text-sm">
                   christina@gmail.com
                 </p>
               </div>
@@ -123,7 +123,7 @@ export default function Appointments() {
           </header>
 
 {/* Body */}
-<div className="flex-1 bg-[#FAFAFA] px-8 py-8 overflow-auto">
+<div className="flex-1 bg-[#FAFAFA] px-4 sm:px-6 lg:px-8 py-5 lg:py-8 overflow-auto">
   {/* Top */}
   <div className="flex items-center justify-between mb-8">
     <h1 className="text-4xl font-bold text-[#1D1D1D]">
@@ -132,19 +132,19 @@ export default function Appointments() {
 
  <button
   onClick={() => setIsModalOpen(true)}
-  className="bg-[#009879] hover:bg-[#00826A] text-white px-6 py-3 rounded-lg font-medium"
+  className="bg-[#009879] hover:bg-[#00826A] text-white w-full sm:w-auto px-6 py-3 rounded-lg font-medium"
 >
   + Add Appointment
 </button>
   </div>
 
   {/* Stats */}
-  <div className="grid grid-cols-2 gap-6 mb-8 max-w-3xl">
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 mb-8 max-w-3xl">
     <div className="bg-white border rounded-2xl p-6 shadow-sm">
       <p className="text-gray-500 text-sm">Today's Appointment</p>
 
       <div className="flex items-center gap-3 mt-2">
-        <h2 className="text-5xl font-bold">150</h2>
+        <h2 className="text-3xl lg:text-5xl font-bold">150</h2>
       </div>
 
       <p className="text-gray-500 mt-4">
@@ -168,16 +168,16 @@ export default function Appointments() {
   {/* Table Card */}
   <div className="bg-white rounded-2xl border shadow-sm overflow-hidden">
     {/* Search */}
-    <div className="flex items-center justify-between p-5 border-b">
+    <div className="flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between p-5 border-b">
       <input
         type="text"
         placeholder="Search for Appointments"
-        className="w-[420px] border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-[#009879]"
+        className="w-full sm:w-[320px] lg:w-[420px] border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-[#009879]"
       />
 
  <button
   onClick={() => setIsFilterOpen(true)}
-  className="border px-6 py-2 rounded-lg hover:bg-gray-50"
+  className="border w-full sm:w-auto px-6 py-2 rounded-lg hover:bg-gray-50"
 >
   Filter
 </button>
@@ -313,25 +313,25 @@ export default function Appointments() {
     </table>
 
     {/* Footer */}
-    <div className="flex justify-between items-center px-6 py-5 border-t">
+    <div className="flex flex-col lg:flex-row gap-4 justify-between items-center px-4 lg:px-6 py-5 border-t">
       <p className="text-gray-500">
         Showing 12-18 of 154 Appointments
       </p>
 
-      <div className="flex gap-2">
-        <button className="w-10 h-10 rounded-lg border">&lt;</button>
+      <div className="flex flex-wrap justify-center gap-2">
+        <button className="w-9 h-9 lg:w-10 lg:h-10 rounded-lg border">&lt;</button>
 
-        <button className="w-10 h-10 rounded-lg bg-[#EAF7F3] text-[#009879] font-semibold">
+        <button className="w-9 h-9 lg:w-10 lg:h-10 rounded-lg bg-[#EAF7F3] text-[#009879] font-semibold">
           1
         </button>
 
-        <button className="w-10 h-10 rounded-lg border">2</button>
+        <button className="w-9 h-9 lg:w-10 lg:h-10 rounded-lg border">2</button>
 
-        <button className="w-10 h-10 rounded-lg border">3</button>
+        <button className="w-9 h-9 lg:w-10 lg:h-10 rounded-lg border">3</button>
 
-        <button className="w-10 h-10 rounded-lg border">15</button>
+        <button className="w-9 h-9 lg:w-10 lg:h-10 rounded-lg border">15</button>
 
-        <button className="w-10 h-10 rounded-lg border">&gt;</button>
+        <button className="w-9 h-9 lg:w-10 lg:h-10 rounded-lg border">&gt;</button>
       </div>
     </div>
   </div>

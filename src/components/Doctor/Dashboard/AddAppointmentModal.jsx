@@ -4,6 +4,7 @@ import { useState } from "react";
 export default function AddAppointmentModal({ isOpen, onClose }) {
   if (!isOpen) return null;
   const [photo, setPhoto] = useState(null);
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
 
   if (!isOpen) return null;
 
@@ -82,11 +83,8 @@ export default function AddAppointmentModal({ isOpen, onClose }) {
   </p>
     </>
   )}
-
  
 </div>
-  
-
 </div>
 
 
@@ -180,11 +178,53 @@ export default function AddAppointmentModal({ isOpen, onClose }) {
             Cancel
           </button>
 
-          <button className="w-[300px] h-12 rounded-xl bg-[#009879] text-white text-[18px] font-medium hover:bg-[#00846A]">
-            Add Appointment
-          </button>
+          <button
+  onClick={() => setShowConfirmModal(true)}
+  className="w-[300px] h-12 rounded-xl bg-[#009879] text-white text-[18px] font-medium hover:bg-[#00846A]"
+>
+  Add Appointment
+</button>
         </div>
       </div>
+      
+      {showConfirmModal && (
+  <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/50">
+    <div className="w-[500px] h-[300px] rounded-[30px] bg-white px-10 py-10 text-center shadow-2xl">
+
+      {/* Icon */}
+      <div className="mx-auto mb-8 flex h-15 w-15 items-center justify-center rounded-full bg-red-600">
+        <X size={50} className="text-white stroke-[3]" />
+      </div>
+
+      {/* Heading */}
+      <h2 className="text-[24px] font-bold text-[#202020] leading-snug">
+        Are you sure you want to cancel
+        <br />
+        this appointment?
+      </h2>
+
+      {/* Buttons */}
+      <div className="mt-10 flex justify-center gap-6">
+        <button
+          onClick={() => setShowConfirmModal(false)}
+          className="w-[200px] h-12 rounded-2xl border border-gray-300 text-[18px] font-semibold"
+        >
+          Cancel
+        </button>
+
+        <button
+          onClick={() => {
+            setShowConfirmModal(false);
+            onClose(); // closes AddAppointmentModal
+          }}
+          className="w-[200px] h-12 rounded-2xl bg-[#009879] text-white text-[18px] font-semibold hover:bg-[#00846A]"
+        >
+          Yes I'm Sure
+        </button>
+      </div>
+    </div>
+  </div>
+)}
     </div>
   );
 }
